@@ -1,0 +1,5 @@
+.DS_Store
+.directory
+.idea/
+.sass-cache/
+node_modules/

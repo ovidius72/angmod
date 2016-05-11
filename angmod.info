@@ -1,0 +1,5 @@
+name = AngularJS Integration
+description = AngulaJS implementation in Drupal.
+core = 7.x
+
+Package = Drupal NG6

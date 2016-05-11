@@ -1,0 +1,36 @@
+{
+  "name": "Drupal NG6",
+  "version": "0.1.0",
+  "authors": [
+    "Antonio Pantano <antonio@webbydays.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-resource": "latest",
+    "angular-material": "latest",
+    "angular-animate": "latest",
+    "angular-aria": "latest",
+    "susy": "latest",
+    "angular-material-icons": "latest",
+    "angular-ui-router": "latest",
+    "angular-messages": "latest",
+    "ng-lodash": "latest",
+    "angular-sanitize": "^1.5.0",
+    "restangular": "^1.5.2",
+    "angular-websocket": "^1.1.0",
+    "angular-cookies": "^1.5.3",
+    "angular-i18n": "^1.5.3",
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.2",
+  }
+}

@@ -1,0 +1,48 @@
+@import "bourbon"
+
+html
+  @media print
+    #skip-link, #branding, #navigation, #console, #admin-menu
+      display: none
+    #page
+      #content
+
+        #sidebar-left, .sidebar-right
+          display: none
+
+      .view.printable-view
+        > div:not(.view-content)
+          display: none
+        .vbo-select-all-markup
+          display: none!important
+
+        .mediaTableMenu
+          display: none
+
+        form > div
+          >*:not(.mediaTableWrapper):not(table), .mediaTableMenu
+            display: none
+
+        .mediaTableWrapper
+          padding-top: 0
+
+          table
+            thead
+              border-color: lightgrey
+
+            tr th:first-child, tr td:first-child
+              display: none
+
+            tr th
+              background-color: #fff
+              border: 1px solid slategray
+
+            tr td
+              background-color: white
+              border:  1px solid slategray
+
+            tr th, tr td
+              .views-field-edit-node,
+              .views-field-delete-node,
+              .views-field-views-bulk-operations
+                display: none
