@@ -18,6 +18,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var extract = require('gulp-html-extract');
 var replace = require('gulp-replace');
 var taskReplace = require('gulp-replace-task');
+var autoprefixer = require('gulp-autoprefixer');
 
 //ES6
 var source = require('vinyl-source-stream');
@@ -235,7 +236,6 @@ function createTemplate(source, names, destination) {
   var result = gulp.src(source)
     .pipe(template(names))
     .pipe(rename(function (path) {
-      "use strict";
       path.basename = path.basename.replace('name', names.camelCaseName);
     }))
     .pipe(gulp.dest(destination));
@@ -334,7 +334,7 @@ function compile(mustWatch, app) {
       .on('end', function () {
         appBuilt += 1;
         canReload();
-      })
+      });
 //      .pipe(livereload());
 
   }
@@ -356,7 +356,7 @@ function compile(mustWatch, app) {
  */
 function es6_watch(app) {
   compile(false, app);
-};
+}
 
 //Reload App scripts after app built is completed.
 function canReload() {
@@ -364,7 +364,7 @@ function canReload() {
   gutil.log(gutil.colors.cyan('Built %d of %d app(s)'), appBuilt, totalApps);
 
   if (appBuilt == totalApps) {
-    livereload.reload('All Apps')
+    livereload.reload('All Apps');
     appBuilt = 0;
   }
 
@@ -393,12 +393,26 @@ gulp.task('jade', function () {
       pretty: true,
     }))
     .pipe(rename(function (file) {
-      file.dirname = ''
+      file.dirname = '';
       return file.basename + file.extname;
     }))
     .pipe(gulp.dest(distPath.templates))
     .pipe(livereload());
 });
+
+
+// /**
+//  * Gulp Task
+//  * Autoprefix css
+//  */
+// gulp.task('autoprefixer', function() {
+//   return gulp.src(distPath.css + '/**/*.css')
+//     .pipe(autoprefixer({
+//       browser: ['last 2 versions'],
+//       cascade: false
+//     }))
+//     .pipe(gulp.dest(distPath.css))
+// });
 
 /**
  * Gulp task.
@@ -409,12 +423,15 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.init())
     .pipe(sass({
       errToconsole: true,
-      includePaths: require('node-bourbon').includePaths,
       output: 'nested',
       //sourceComments: 'normal',
       onsuccess: {},
       onError: {}
     })).on('error', sass.logError)
+    .pipe(autoprefixer({
+      browser: ['last 2 versions'],
+//      cascade: false
+    }))
     .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest(distPath.css));
 //    .pipe(livereload());
@@ -430,7 +447,7 @@ gulp.task('sass-print', function () {
     .pipe(sourcemaps.init())
     .pipe(sass({
       errToconsole: true,
-      includePaths: require('node-bourbon').includePaths,
+//      includePaths: require('node-bourbon').includePaths,
       output: 'nested',
       //sourceComments: 'normal',
       onsuccess: {},
@@ -484,14 +501,13 @@ gulp.task('test', function (done) {
     singleRun: false,
     autoWatch: true,
   }, done()).start();
-})
+});
 
 gulp.task('clean:templates', function () {
   "use strict";
   return del(distPath.templates + '/*.html', {force: true}).then(paths => {
     console.log('Deleting templates: \n', paths.join('\n'));
   });
-  ;
 });
 
 gulp.task('clean:apps', function () {

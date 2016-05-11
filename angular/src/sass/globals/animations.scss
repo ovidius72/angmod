@@ -1,5 +1,5 @@
 .pulse {
-  @include animation(pulse .6s ease-out 3);
+  animation: pulse .6s ease-out 3;
   color: orangered;
 }
 

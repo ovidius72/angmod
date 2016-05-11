@@ -1,11 +1,18 @@
+@charset "UTF-8";
+/*
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v1.4.0
+* Docs at http://davidtheclark.github.io/scut
+*/
 .pulse {
-  -webkit-animation: pulse 0.6s ease-out 3;
-  -moz-animation: pulse 0.6s ease-out 3;
-  animation: pulse 0.6s ease-out 3;
+  -webkit-animation: pulse .6s ease-out 3;
+          animation: pulse .6s ease-out 3;
   color: orangered; }
 
 /* The starting CSS styles for the enter animation */
 .myfade.ng-enter {
+  -webkit-transition: 0.1s linear all;
   transition: 0.1s linear all;
   opacity: 0; }
 
@@ -21,10 +28,12 @@
 
 .myfade.ng-enter-stagger {
   /* this will have a 100ms delay between each successive leave animation */
-  transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
   /* As of 1.4.4, this must always be set: it signals ngAnimate
                          to not accidentally inherit a delay property from another CSS class */
-  transition-duration: 0s; }
+  -webkit-transition-duration: 0s;
+          transition-duration: 0s; }
 
 @-webkit-keyframes pulsate {
   0% {
@@ -45,5 +54,153 @@
   100% {
     -webkit-transform: scale(1.2, 1.2);
     opacity: 0.0; } }
+
+.layout__main__right, .layout__main__left {
+  background-color: lightgoldenrodyellow;
+  border-left: 5px solid;
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px; }
+
+.layout__side__left, .latoyt__side__right {
+  background-color: lightpink;
+  width: 100%;
+  height: 90px; }
+  .layout__side__left html, .latoyt__side__right html {
+    box-sizing: border-box; }
+  .layout__side__left *, .layout__side__left *:before, .layout__side__left *:after, .latoyt__side__right *, .latoyt__side__right *:before, .latoyt__side__right *:after {
+    box-sizing: inherit; }
+  .layout__side__left body, .latoyt__side__right body {
+    -webkit-font-smoothing: antialiased; }
+  .layout__side__left *, .layout__side__left *:before, .layout__side__left *:after, .latoyt__side__right *, .latoyt__side__right *:before, .latoyt__side__right *:after {
+    -webkit-font-smoothing: inherit; }
+  .layout__side__left h1,
+  .layout__side__left h2,
+  .layout__side__left h3,
+  .layout__side__left h4,
+  .layout__side__left h5,
+  .layout__side__left h6, .latoyt__side__right h1,
+  .latoyt__side__right h2,
+  .latoyt__side__right h3,
+  .latoyt__side__right h4,
+  .latoyt__side__right h5,
+  .latoyt__side__right h6 {
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0; }
+  .layout__side__left b, .latoyt__side__right b {
+    font-weight: normal; }
+  .layout__side__left label,
+  .layout__side__left select,
+  .layout__side__left option,
+  .layout__side__left button, .latoyt__side__right label,
+  .latoyt__side__right select,
+  .latoyt__side__right option,
+  .latoyt__side__right button {
+    cursor: pointer; }
+  .layout__side__left fieldset, .latoyt__side__right fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0; }
+  .layout__side__left textarea, .latoyt__side__right textarea {
+    resize: vertical; }
+  .layout__side__left button,
+  .layout__side__left [type="button"],
+  .layout__side__left [type="submit"],
+  .layout__side__left [type="reset"], .latoyt__side__right button,
+  .latoyt__side__right [type="button"],
+  .latoyt__side__right [type="submit"],
+  .latoyt__side__right [type="reset"] {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+    .layout__side__left button::-moz-focus-inner,
+    .layout__side__left [type="button"]::-moz-focus-inner,
+    .layout__side__left [type="submit"]::-moz-focus-inner,
+    .layout__side__left [type="reset"]::-moz-focus-inner, .latoyt__side__right button::-moz-focus-inner,
+    .latoyt__side__right [type="button"]::-moz-focus-inner,
+    .latoyt__side__right [type="submit"]::-moz-focus-inner,
+    .latoyt__side__right [type="reset"]::-moz-focus-inner {
+      padding: 0;
+      border: 0; }
+  .layout__side__left p:first-of-type, .latoyt__side__right p:first-of-type {
+    margin-top: 0; }
+  .layout__side__left p:last-of-type, .latoyt__side__right p:last-of-type {
+    margin-bottom: 0; }
+  .layout__side__left img,
+  .layout__side__left video, .latoyt__side__right img,
+  .latoyt__side__right video {
+    max-width: 100%;
+    height: auto; }
+  .layout__side__left figure, .latoyt__side__right figure {
+    margin: 0; }
+  .layout__side__left .content, .latoyt__side__right .content {
+    background-color: #fff; }
+
+.layout__wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  @media (min-width: 728px) {
+    .layout__wrapper {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
+  .layout__wrapper .layout__main__left, .layout__wrapper .layout__main__right {
+    -webkit-flex-basis: 70%;
+        -ms-flex-preferred-size: 70%;
+            flex-basis: 70%; }
+  .layout__wrapper .layout__side__left, .layout__wrapper .latoyt__side__right {
+    -webkit-flex-basis: 30%;
+        -ms-flex-preferred-size: 30%;
+            flex-basis: 30%; }
+
+.eq[data-eq-state$="small"] {
+  background-color: red; }
+
+.eq[data-eq-state$="medium"] {
+  background-color: green; }
+
+.eq[data-eq-state$="large"] {
+  background-color: lightskyblue; }
+
+.navbar-main ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0; }
+  .navbar-main ul > li {
+    display: inline; }
+    .navbar-main ul > li:not(:last-child):after {
+      content: " • "; }
+  .navbar-main ul li a {
+    text-decoration: none; }
+  .navbar-main ul li:first-child a {
+    padding: 8px 8px 8px 0; }
+  .navbar-main ul li:last-child a {
+    padding: 8px 0 8px 8px; }
+  .navbar-main ul li:not(:first-child):not(:last-child) a {
+    padding: 8px; }
+  .navbar-main ul li.active a {
+    color: orangered; }
 
 /*# sourceMappingURL=maps/custom_style.css.map */

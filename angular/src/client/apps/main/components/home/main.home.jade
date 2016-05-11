@@ -1,6 +1,9 @@
-div.container
-	.home-components()
-		section.layout__main__right
-			.content Main Section
-		section.layout__side__left
-			.content Side Section
+.home-components.layout__wrapper()
+  section.eq.layout__main__right(
+  data-eq-pts="small: 200, medium: 300, large: 400"
+  )
+    .content Main Section
+  section.eq.layout__side__left(
+  data-eq-pts="small: 100, medium: 200, large: 250"
+  )
+    .content Side Section

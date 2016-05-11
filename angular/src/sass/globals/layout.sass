@@ -1,3 +1,36 @@
 .layout__main__right, .layout__main__left
+  background-color: lightgoldenrodyellow
+  +scut-border(5px solid, n n n y)
+  +scut-padding(8px)
+
 
 .layout__side__left, .latoyt__side__right
+  background-color: lightpink
+  +scut-reset()
+  +scut-size(100% 90px)
+
+  .content
+    background-color: #fff
+
+
+.layout__wrapper
+  display: flex
+  flex-direction: column
+  +susy-breakpoint($bk-728)
+    flex-direction: row
+
+  .layout__main__left, .layout__main__right
+    flex-basis: 70%
+
+  .layout__side__left, .latoyt__side__right
+    flex-basis: 30%
+
+.eq
+  +eq('small')
+    background-color: red
+
+  +eq('medium')
+    background-color: green
+
+  +eq('large')
+    background-color: lightskyblue

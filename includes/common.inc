@@ -49,16 +49,18 @@ function angular_include_scripts($application) {
     'siteName' => variable_get('site_name', ''),
     'language' => $language,
   
-    //Inject the varibales you need on the front-end.
+    //Inject the variables you need in the front-end.
     /*variables' => array(
       'variable' => variable_get('variable_name', 'default_value'),
     ),*/
+
     //User information you need
     'user' => array(
       'user' => isset($user->name) ? $user->name : 'anonymous',
       // 'id' => $user->uid,
       // 'roles' => $user->roles,
     ),
+
     //The default site timezone
     'timezone' => $timezone,
   );
@@ -168,6 +170,14 @@ function angular_include_scripts($application) {
   ));
 
   /**
+   * Add EQ.js for element queries
+   */
+  drupal_add_js($bower_path . '/eq.js/dist/eq.min.js', array(
+    'type' => 'file',
+    'weight' => 140
+  ));
+
+  /**
    * Our Application
    * The current loaded application.
    */
@@ -183,5 +193,7 @@ function angular_include_scripts($application) {
     'type' => 'file',
     'weight' => 300
   ));
+
+
 
 }

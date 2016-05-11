@@ -1,2 +1,7 @@
 
-<div class="navbar-main"><a ui-sref="home">{{ vm.locale.home | capitalize}}</a><a ui-sref="test">Test</a></div>
+<div class="navbar-main">
+  <ul>
+    <li ui-sref-active="active"><a ui-sref="home">{{ vm.locale.home | capitalize}}</a></li>
+    <li ui-sref-active="active"><a ui-sref="test">Test</a></li>
+  </ul>
+</div>

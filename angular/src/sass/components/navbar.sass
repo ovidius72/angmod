@@ -1,0 +1,18 @@
+.navbar-main
+  ul
+    +scut-list-punctuated("\0020\2022\0020")
+    li
+      & a
+        text-decoration: none
+
+      &:first-child a
+        padding: 8px 8px 8px 0
+
+      &:last-child a
+        padding: 8px 0 8px 8px
+
+      &:not(:first-child):not(:last-child) a
+        padding: 8px
+
+      &.active a
+        color: orangered
