@@ -12,6 +12,10 @@ let HomeModule = angular.module('app.components.home', [])
         url: '/',
         template: "<home></home>",
       })
+      .state('test', { //Test Page
+        url: '/test',
+        template: "<test></test>",
+      })
       .state('404', {
         url: '/404',
         template: '<strong>Page Not Found (404)</strong>'

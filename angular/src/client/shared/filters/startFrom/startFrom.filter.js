@@ -6,7 +6,7 @@ let StartFrom = angular.module('app.shared.filters.startfrom', [])
         start = +start; //parse to int
         return input.slice(start);
       }
-    }
+    };
   });
 
 export default StartFrom;

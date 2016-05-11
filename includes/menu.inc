@@ -12,16 +12,16 @@
 function angmod_menu() {
   $items = array();
 
-  $items['admin/angmod_settings'] = array(
-    'title' => t('Angmod settings'),
-    'description' => t('Custom administration page'),
+  $items['admin/angmod'] = array(
+    'title' => t('Angmod'),
+    'description' => t('Angmod administration page'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('angmod_custom_settings_administration_form'),
     'access arguments' => array('administer content types'),
     'type' => MENU_NORMAL_ITEM,
   );
 
-  $items['main_app'] = array(
+  $items['main'] = array(
     'title' => t('Main App'),
     'description' => t('Main Application'),
     'page callback' => 'angmod_main_page',

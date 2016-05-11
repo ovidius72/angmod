@@ -1,5 +1,4 @@
-name = AngularJS Integration
-description = AngulaJS implementation in Drupal.
+name = angmod
+description = AngulaJS integration in Drupal.
 core = 7.x
-
-Package = Drupal NG6
+Package = NG6

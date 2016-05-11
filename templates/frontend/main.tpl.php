@@ -11,8 +11,8 @@
 
 global $language;
 
-$language->prefix ? $langPrefix = '/' . $language->prefix . '/' : $langPrefix = '/';
-$path = drupal_is_front_page() ? $langPrefix : $langPrefix . current_path() . '/';
+//$language->prefix ? $langPrefix = '/' . $language->prefix . '/' : $langPrefix = '/';
+//$path = drupal_is_front_page() ? $langPrefix : $langPrefix . current_path() . '/';
 drupal_set_title('');
 
 ?>

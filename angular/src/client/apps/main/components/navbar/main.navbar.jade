@@ -1,2 +1,3 @@
 div.navbar-main()
-  a(ui-sref="main") {{ vm.locale.home || capitalize}}
+  a(ui-sref="home") {{ vm.locale.home | capitalize}}
+  a(ui-sref="test") Test

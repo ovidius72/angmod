@@ -5,11 +5,11 @@ let HomeComponent = (AppSettings) => {
 
   return {
     restrict: 'E',
-    templateUrl: AppSettings.templates + 'auctions.home.html',
+    templateUrl: AppSettings.templates + 'main.home.html',
     controller: HomeController,
     controllerAs: "vm",
     scope: {}
-  }
+  };
 
 };
 

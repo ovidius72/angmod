@@ -5,35 +5,3 @@ module_load_include('inc', 'angmod', 'includes/forms');
 module_load_include('inc', 'angmod', 'includes/menu');
 module_load_include('inc', 'angmod', 'includes/theme');
 module_load_include('inc', 'angmod', 'includes/callbacks');
-
-
-/**
- * Implements hook_block_info().
- */
-function angmod_block_info() {
-  // $blocks = array();
-  // $blocks['my_block'] = array(
-  //   'info' => t('My block Name'),
-  //   'cache' => DRUPAL_NO_CACHE,
-  // );
-
-  // return $blocks;
-}
-
-/**
- * Implements hook_block_view().
- */
-function angmod_block_view($delta = '') {
-  // $block = array();
-
-  // switch ($delta) {
-  //   case 'my_block':
-  //         $output = "Something";
-  //         $block['content'] = $output;
-  //       }
-  //     }
-  //     break;
-  // }
-
-  // return $block;
-}

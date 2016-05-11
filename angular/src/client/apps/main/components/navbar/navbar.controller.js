@@ -6,7 +6,6 @@ class NavbarController {
               AppSettings,
               $sce,
               LocaleFactory,
-              $cookies,
               EventHelper) {
     //common features.
     this.name = 'NavbarController';
@@ -17,7 +16,6 @@ class NavbarController {
     this.t = Drupal.t;
     this.EventHelper = EventHelper;
     this.locale = LocaleFactory;
-    this.$cookies = $cookies;
 
     //Custom code
     
